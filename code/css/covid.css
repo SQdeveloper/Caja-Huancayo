@@ -1,0 +1,299 @@
+/********** General ************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/********** Header *************/
+header {    
+    background-color: red;
+}
+
+header .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 80px;
+}
+
+header .right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+header .right a {
+    border: 1px solid white;
+    border-radius: 12px 5px 12px 5px;
+    padding: 5px 10px; 
+}
+
+header form input {
+    border: 1px solid white;
+    border-radius: 12px 5px 12px 5px;
+    padding: 7px 10px;
+    background-color: transparent;
+    color: white;
+    outline: none;
+}
+
+header form input::placeholder {
+    color: white;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: rgb(99, 98, 98);
+}
+
+header ul {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 17px;
+    row-gap: 10px;
+}
+
+header .top .toggle {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    display: none;
+}
+
+/*********** Menu ***********/
+.menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(124, 123, 123);
+    z-index: 3;
+    transform: translateX(100%);
+    transition: transform .6s;
+}
+
+.menu:target {
+    transform: none;
+}
+
+.menu .top {
+    position: relative;
+    width: 100%;
+    background-color: red;
+    height: 50px;
+}
+
+.menu .top > a:last-child {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu .top > a:last-child img {
+    width: 220px;
+}
+
+.menu .top .atras {
+    height: 100%;
+    display: block;
+    padding: 18px;
+    width: fit-content;
+    background-color: transparent;
+    border-right:  1px solid white;
+}
+
+.menu .top .atras img {
+    filter: invert(100%);
+    width: fit-content;
+}
+
+.menu ul {
+    width: 100%;
+}
+
+.menu ul a {
+    display: block;
+    border-bottom: 1px solid white;
+    padding: 20px 0;
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+/************ First *************/
+.first {
+    display: flex;
+    width: 85%;
+    margin: 60px auto;
+    gap: 40px;
+}
+
+.first .left ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgb(238, 238, 238); 
+    border: 1px solid rgb(184, 182, 182);
+}
+
+.first .left li {
+    border-bottom: 1px solid rgb(190, 190, 190);
+    padding-bottom: 10px;
+}
+
+.first .left li:last-child {
+    border: none;
+    padding: 3px;
+}
+
+.first .left a {
+    color: black;
+}
+
+.first .center {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.first .center h3 {
+    color: red;
+}
+
+/*********** Footer ************/
+footer {
+    width: 100%;
+    background-color: rgb(87, 87, 87);;
+}
+
+footer .top {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    color: white;
+    padding: 30px 60px;
+}
+
+footer .top h3 {
+    margin-bottom: 20px;
+}
+
+footer .top ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+footer .top .redes ul {
+    flex-direction: row;
+}
+
+footer .top > div:last-child h4{
+    margin: 30px 0;
+    display: block;
+}
+
+footer .top > div:last-child > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer .foot {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    background-color: rgb(63, 62, 62);
+    padding: 15px 60px;
+}
+
+footer .foot ul {
+    display: flex;
+    gap: 10px;
+}
+
+/******** Querys **********/
+@media (max-width: 1000px) {
+    /********* Header **********/
+    header .right {
+        display: none;
+    }
+
+    header .top {
+        padding: 0 15px;
+    }
+
+    header .top .toggle {
+        display: block;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    /******** Footer *********/
+    footer .top {
+        padding: 30px;
+    }
+    
+    footer .foot {
+        padding: 15px 30px;
+    }
+}
+
+@media (max-width: 850px) {
+    /********* First ***********/
+    .first {
+        flex-direction: column;
+        margin: 40px auto;
+    }
+
+    /********* Footer **********/
+    footer .foot {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 480px) {
+    /********* First ***********/
+    .first {
+        width: 90%;
+    } 
+
+    /******* Footer ********/
+    footer .top {
+        flex-direction: column;
+    }
+}
